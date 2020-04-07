@@ -17,8 +17,8 @@ import numpy as np
 import pandas as pd
 from distutils.version import StrictVersion
 
-__version_info__ = ('0', '0', '7', 'dev')
-__date__ = '14 Feb 2016'
+__version_info__ = ('0', '0', '8', 'dev')
+__date__ = '07 Apr 2020'
 
 
 __version__ = '.'.join(__version_info__)
@@ -217,7 +217,7 @@ def yearplot(data, year=None, how='sum', vmin=None, vmax=None, cmap='Reds',
         dayticks = range(len(daylabels))[dayticks // 2::dayticks]
 
     ax.set_xlabel('')
-    ax.set_xticks([by_day.ix[datetime.date(year, i + 1, 15)].week
+    ax.set_xticks([by_day.loc[datetime.date(year, i + 1, 15)].week
                    for i in monthticks])
     ax.set_xticklabels([monthlabels[i] for i in monthticks], ha='center')
 
